@@ -1,0 +1,11 @@
+[Unit]
+Description=Sends random messages to minecraft server
+Requires=minecraftd@%I.service
+After=minecraftd@%I.service
+
+[Service]
+ExecStart=/usr/bin/send-messages.py %I
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
